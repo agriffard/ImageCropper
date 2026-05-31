@@ -1,0 +1,18 @@
+@using Microsoft.JSInterop
+@implements IAsyncDisposable
+
+<div class="image-cropper-root">
+    <canvas @ref="_canvas" width="@CanvasWidth" height="@CanvasHeight" class="image-cropper-canvas"></canvas>
+
+    <div class="image-cropper-controls">
+        <label>
+            Zoom (@Zoom.ToString("0.00"))
+            <input type="range" min="1" max="3" step="0.01" @bind="Zoom" @bind:after="RenderAsync" />
+        </label>
+        <label>
+            Rotation (@Rotation.ToString("0")°)
+            <input type="range" min="-180" max="180" step="1" @bind="Rotation" @bind:after="RenderAsync" />
+        </label>
+        <button type="button" @onclick="ExportAsync" disabled="@string.IsNullOrWhiteSpace(ImageUrl)">Export blob</button>
+    </div>
+</div>
