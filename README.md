@@ -45,10 +45,6 @@ dotnet add package ImageCropper
 - `src/ImageCropper`: NuGet-ready Blazor component library (`net10.0`)
 - `samples/ImageCropper.Sample`: Blazor WebAssembly sample app
 - `docs`: short usage docs for GitHub Pages/readers
-- `.github/workflows`:
-  - `ci.yml` (restore/build/test)
-  - `nuget.yml` (pack and publish to NuGet)
-  - `pages.yml` (publish sample app to GitHub Pages)
 
 ## Run sample locally
 
